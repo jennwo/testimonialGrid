@@ -48,8 +48,10 @@ body{
     flex-direction: column;
 }
 .card{
-    padding: 2.5em;
+    padding: 2em;
     border-radius: 12px;
+    padding-bottom: 1em;
+    padding-top: 1em;
     
 }
 
@@ -62,20 +64,20 @@ body{
 }
 .profileName{
     grid-area: name;
-    font-size: 1.5em;
+    font-size: 1em;
     height: min-content;
 }
 .verifiedGrad{
     font-weight: 300;
     font-style: normal;
-    font-size: .9em;
+    font-size: .8em;
     opacity: 50%;
 }
 .personalComment{
     grid-area: comment;
-    font-size: 2em;
+    font-size:1.7em;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1.2em;
     
     
 }
@@ -159,7 +161,6 @@ body{
 
 @media (min-width: 1001px){
     #container{
-        padding: 1em;
         width: auto;
         height: min-content;
         max-width: 1440px;
@@ -171,15 +172,13 @@ body{
             "purple  purple  darkGray  white2"
             "white1  black   black     white2";
         margin: auto;
+        margin-top: 10vh;
         
-    }
-    .personalComment{
-        margin-top: -.01em;
     }
     .quote{
         margin-top: -.5em;
     }
-    
+
     #cardPurple{
         grid-area: purple;
     }
