@@ -1,0 +1,199 @@
+hmtl{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+:root{
+
+    /* COLOR VARIABLES */
+        /* PRIMARY COLORS */
+        --moderateViolet: hsl(263, 55%, 52%);
+        --veryDarkGrayBlue: hsl(217, 19%, 35%);
+        --veryDarkBlackBlue:  hsl(219, 29%, 14%);
+        --white: hsl(0, 0%, 100%);
+
+        /* NEUTRAL COLORS */
+        --lightGray: hsl(0, 0%, 81%);
+        --lightGrayBlue: hsl(210, 46%, 95%);
+}
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: var(--lightGrayBlue);
+    margin: 2em;
+}
+
+/* GRID STYLES */
+#container{
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 2em;
+    margin: auto;
+}
+
+/* CARD STYLES */
+.flexContainer1{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexContainer2{
+    display:flex;
+    flex-direction: column;
+}
+.card{
+    padding: 2.5em;
+    border-radius: 12px;
+    
+}
+
+.profilePic{
+    grid-area: profilePic;
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    margin-right: .25em;
+}
+.profileName{
+    grid-area: name;
+    font-size: 1.5em;
+    height: min-content;
+}
+.verifiedGrad{
+    font-weight: 300;
+    font-style: normal;
+    font-size: .9em;
+    opacity: 50%;
+}
+.personalComment{
+    grid-area: comment;
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1em;
+    
+    
+}
+.quote{
+    grid-area: quote;
+    font-weight: 300;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    opacity: 70%;
+}
+
+
+#cardPurple{
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-position: 85% 7%;
+    background-repeat: no-repeat;
+    background-color: var(--moderateViolet);
+    color: var(--white)
+}
+
+#cardDarkGray{
+    background-color: var(--veryDarkGrayBlue);
+    color: var(--white);
+}
+
+#cardWhiteLong{
+    background-color: var(--white);
+    color: var(--veryDarkBlackBlue);
+
+}
+#cardDarkBlackBlue{
+    background-color: var(--veryDarkBlackBlue);
+    color: var(--white);
+}
+#cardWhiteShort{
+    background-color: var(--white);
+    color: var(--veryDarkBlackBlue);
+}
+
+
+
+/* MEDIUM SCREEN STYLES */
+    @media (min-width: 820px) and (max-width: 1000px){
+        #container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: .7fr 1fr .7fr 1fr;
+            grid-template-areas:
+                "purple   purple"
+                "whiteS   darkGray"
+                "darkBlue darkBlue"
+                "whiteL   whiteL";
+                gap: 1em 2em;
+        }
+        #card{
+            height: min-content;
+        }
+        #cardPurple{
+            grid-area: purple;
+        } 
+
+        #cardWhiteShort{
+            grid-area: whiteS;
+        }
+        #cardDarkGray{
+            grid-area: darkGray;
+        }
+        #cardDarkBlackBlue{
+            grid-area: darkBlue;
+        }
+        #cardWhiteLong{
+            grid-area: whiteL;
+            height: min-content;
+            
+        }
+
+    } 
+
+
+/* LARGE SCREEN STYLES */
+
+@media (min-width: 1001px){
+    #container{
+        padding: 1em;
+        width: auto;
+        height: min-content;
+        max-width: 1440px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2em 2em;
+        grid-template-areas: 
+            "purple  purple  darkGray  white2"
+            "white1  black   black     white2";
+        margin: auto;
+        
+    }
+    .personalComment{
+        margin-top: -.01em;
+    }
+    .quote{
+        margin-top: -.5em;
+    }
+    
+    #cardPurple{
+        grid-area: purple;
+    }
+    
+    #cardDarkGray{
+        grid-area: darkGray;
+    }
+    #cardWhiteLong{
+        grid-area: white2;
+    }
+    #cardWhiteShort{
+        grid-area: white1;
+    }
+    #cardDarkBlackBlue{
+        grid-area: black;
+    }
+}
