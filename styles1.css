@@ -64,7 +64,7 @@ body{
 }
 .profileName{
     grid-area: name;
-    font-size: 1em;
+    font-size: 1.2em;
     height: min-content;
 }
 .verifiedGrad{
